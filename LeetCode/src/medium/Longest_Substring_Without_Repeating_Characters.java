@@ -12,11 +12,11 @@ public class Longest_Substring_Without_Repeating_Characters {
 		LinkedList<Object> ll = new LinkedList<Object>();
 		for (int i = 0; i < s.length(); i++) {
 			
-			if (ll.size() != 0) {
-				if (ll.get(ll.size() - 1).equals(temp)) {
-					
-				}
-			}
+//			if (ll.size() != 0) {
+//				if (ll.get(ll.size() - 1).equals(temp)) {
+//					
+//				}
+//			}
 			
 			temp = s.charAt(i);
 			

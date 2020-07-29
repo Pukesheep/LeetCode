@@ -17,15 +17,24 @@ public class Test0 {
 			return;
 		String[] word = stInp.replace(",", " ").replace(".", " ").split(" ");
 		ArrayList<String> arrWord = new ArrayList<String>();
-		HashMap hm = new HashMap();
+		HashMap<String, Integer> hm = new HashMap<String, Integer>();
 		for (String st:word) {
 			if (st!=null && st.length()>0) {
 				arrWord.add(0, st);
-				if (!hm.containsKey(st)) {
-					hm.put(st, st);					
-				}
 			}
 		}
+		int i = 0;
+		for (String st : arrWord) {
+			
+			if (arrWord.indexOf(st) != i) {
+				int j = hm.get(st);
+				hm.put(st, ++j);
+			} else {
+				hm.put(st, 1);
+			}
+			i++;
+		}
+		
 		System.out.println("Reversed String=");
 		for (String st:arrWord) {
 			System.out.print(st+" ");
@@ -35,36 +44,14 @@ public class Test0 {
 		System.out.println("All Words=");
 		for (Object key:hm.keySet()) {
 			System.out.print(key+" ");
+			System.out.print(" : " + hm.get(key) + " time");
+			System.out.println();
 		}		
 	}
 	
-	public static void qqqq(String input) {
-		
-		if (input == null) {
-			return;
-		}
-		
-		String strArr = input.replace(",", " ").replace(".", " ");
-		String[] strArr1 = strArr.split(" ");
-		
-		for (int i = strArr1.length - 1; i >= 0; i--) {
-			System.out.print(strArr1[i] + " ");
-		}
-		
-//		StringBuffer sb = new StringBuffer();
-//		for (int i = 0; i < strArr.length; i++) {
-//			sb.insert(0, strArr[i]);
-//		}
-//		
-//		for (int i = 0; i < sb.length(); i++) {
-//			System.out.print(sb.charAt(i));
-//		}
-		
-	}
 	
 	public static void main(String[] args) {
 		Test0.execute("I, Jimmy, saw a saw saw a saw");
-//		Test0.qqqq("I, Jimmy, saw a saw saw a saw");
 	}
 	
 }
