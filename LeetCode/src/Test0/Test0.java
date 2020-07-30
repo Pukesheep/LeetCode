@@ -23,18 +23,15 @@ public class Test0 {
 				arrWord.add(0, st);
 			}
 		}
-		int i = 0;
-		for (String st : arrWord) {
-			
+		for (int i = 0; i < arrWord.size(); i++) {
+			String st = arrWord.get(i);
 			if (arrWord.indexOf(st) != i) {
 				int j = hm.get(st);
 				hm.put(st, ++j);
 			} else {
 				hm.put(st, 1);
 			}
-			i++;
 		}
-		
 		System.out.println("Reversed String=");
 		for (String st:arrWord) {
 			System.out.print(st+" ");
@@ -43,8 +40,7 @@ public class Test0 {
 		System.out.println();
 		System.out.println("All Words=");
 		for (Object key:hm.keySet()) {
-			System.out.print(key+" ");
-			System.out.print(" : " + hm.get(key) + " time");
+			System.out.print(key+" : " + hm.get(key) + " times");
 			System.out.println();
 		}		
 	}
